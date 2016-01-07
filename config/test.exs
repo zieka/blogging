@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :blogging, Blogging.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
+  username: "kyle",
   password: "postgres",
   database: "blogging_test",
   hostname: "localhost",
