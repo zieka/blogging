@@ -19,6 +19,7 @@ defmodule Blogging.Router do
     get "/", PageController, :index
 
     resources "/posts", PostController
+    resources "/registrations", RegistrationController, only: [:new, :create]
   end
 
   # Other scopes may use custom stacks.
