@@ -19,7 +19,7 @@ defmodule Blogging.RegistrationController do
 	      conn
         #|> put_session(:current_user, User.id)
       	|> put_flash(:info, "Your account was created")
-      	|> redirect(to: "/")
+      	|> redirect(to: "/posts")
 
 	    {:error, changeset} ->
 	      #show error message

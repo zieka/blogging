@@ -36,4 +36,6 @@ defmodule Blogging.Endpoint do
     signing_salt: "TvQdpUTU"
 
   plug Blogging.Router
+
+
 end
