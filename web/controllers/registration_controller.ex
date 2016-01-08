@@ -4,7 +4,10 @@ defmodule Blogging.RegistrationController do
 
   def new(conn, _params) do
     changeset = User.changeset(%User{})
-    render conn, changeset: changeset
+    #render conn, changeset: changeset
+    conn
+    |> put_layout("auth.html") #this overides default layout
+    |> render("new.html", changeset: changeset)
   end
 
   def create(conn, %{"user" => user_params}) do
@@ -14,6 +17,7 @@ defmodule Blogging.RegistrationController do
 	    {:ok, changeset} ->
 	      #sign in the user
 	      conn
+        #|> put_session(:current_user, User.id)
       	|> put_flash(:info, "Your account was created")
       	|> redirect(to: "/")
 
@@ -21,6 +25,7 @@ defmodule Blogging.RegistrationController do
 	      #show error message
 	      conn
 	      |> put_flash(:info, "Unable to create account")
+        |> put_layout("auth.html") #this overides default layout
       	|> render("new.html", changeset: changeset)
 	 	end
 	end

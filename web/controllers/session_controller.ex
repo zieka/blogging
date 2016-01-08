@@ -2,7 +2,9 @@ defmodule Blogging.SessionController do
   use Blogging.Web, :controller
 
   def new(conn, _params) do
-    render conn, "new.html"
+    conn
+    |> put_layout("auth.html") #this overides default layout
+  	|> render "new.html"
   end
 
   def create(conn, %{"session" => session_params}) do

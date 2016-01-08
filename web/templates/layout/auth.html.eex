@@ -33,13 +33,11 @@
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-<%= if logged_in?(@conn) do %>
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
-<% else %>
-  <main role="main">You need to login >< </main>
- <% end %>
+
+
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

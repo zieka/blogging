@@ -52,8 +52,9 @@ defmodule Blogging.Web do
       import Blogging.Router.Helpers
       import Blogging.ErrorHelpers
       import Blogging.Gettext
+      import Blogging.Session, only: [current_user: 1, logged_in?: 1]
     end
-    #import Blogging.Session, only: [current_user: 1, logged_in?: 1]
+
   end
 
   def router do

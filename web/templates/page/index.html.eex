@@ -5,10 +5,5 @@
 
 <div class="row marketing">
   <div class="col-lg-6">
-    <h4>Posts</h4>
-    <ul>
-      <li>
-        <a href="/posts/new">Add a new post</a>
-      </li>
-    </ul>
+
   </div>
