@@ -16,9 +16,10 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><%= link "Home", to: page_path(@conn, :index) %></li>
-            <li><%= link "Posts", to: post_path(@conn, :index) %></li>
+
+            <li><%= link "Login",    to: "/login" %></li>
             <li><%= link "Register", to: registration_path(@conn, :new) %></li>
+
           </ul>
         </nav>
         <span>BLOGGING</span>

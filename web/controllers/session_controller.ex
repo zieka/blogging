@@ -17,5 +17,12 @@ defmodule Blogging.SessionController do
 	      |> put_flash(:info, "Wrong email or password")
 	      |> render("new.html")
 	  end
-end
+	end
+
+	def delete(conn, _) do
+	  conn
+	  |> delete_session(:current_user)
+	  |> put_flash(:info, "Logged out")
+	  |> redirect(to: "/")
+	end
 end
